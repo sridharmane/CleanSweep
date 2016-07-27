@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="home">
+  <h2>Welcome to Ionic!</h2>
+  <p>
+    This starter project comes with simple tabs-based layout for apps that are going to primarily use a Tabbed UI.
+  </p>
+  <p>
+    Take a look at the <code>app/</code> directory to add or change tabs, update any existing page or create new pages.
+  </p>
+  <ion-card>
+    <h1>{{ title }}</h1>
+
+    <!-- this creates a google map on the page with the given lat/lng from -->
+    <!-- the component as the initial center of the map: -->
+
+    <sebm-google-map [latitude]="marker.lat" [longitude]="marker.lng" [zoom]="zoom" disableDefaultUI>
+      <sebm-google-map-marker [latitude]="marker.lat" [longitude]="marker.lng"></sebm-google-map-marker>
+    </sebm-google-map>
+    <div id="googleMapElement"></div>
+    <button fab fab-right fab-top (click)="test()">
+    <ion-icon name="pin"></ion-icon>
+  </button>
+
+
+
+    <ion-item>
+      <span item-left>18 min</span>
+      <span item-left>(2.6 mi)</span>
+      <button primary clear item-right (click)="updateMarker()">
+      <ion-icon name="navigate"></ion-icon>
+      Start
+    </button>
+    </ion-item>
+  </ion-card>
+</ion-content>
