@@ -9,6 +9,7 @@ import {
   MarkerManager,
   SebmGoogleMapMarker
 } from 'angular2-google-maps/core';
+// import {MapOptions} from 'angular2-google-maps/core/services/google-maps-types';
 
 
 @Component({
@@ -37,16 +38,22 @@ export class HomePage {
     private navCtrl: NavController,
     private mapLoader: MapsAPILoader,
     private mapConfig: LazyMapsAPILoaderConfig,
-    private gm: GoogleMapsAPIWrapper,
-    private mm: MarkerManager
+    private gm: GoogleMapsAPIWrapper
+    // private mm: MarkerManager,
+    // private mo : MapOptions
   ) {
     // console.log(mapLoader);
-    mapConfig.apiKey = this.apiKey;
+    this.mapConfig.apiKey = this.apiKey;
+    // this.mo.zoom = 9;
+    // this.mo.zoomControl = false;
+    //
+    // // this.mo.scaleControl = false;
+    // this.mo.streetViewControl = false;
 
     console.log(gm);
     this.gm = gm;
     this.gm.setMapOptions(mapConfig);
-    this.mm = mm;
+    // this.gm.setMapOptions(mo)
   }
   test(): void {
     this.zoom--;

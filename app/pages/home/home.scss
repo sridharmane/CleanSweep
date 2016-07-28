@@ -3,9 +3,22 @@
 ion-card.adv-map p {
   font-size: 0.7em !important;
 }
+ion-avatar{
+  width: 52px;
+  text-align: center;
+  margin: 0 0 2px;
+  font-size: 3rem;
+  font-weight: normal;
+  line-height: 4rem;
+}
+.item h1 {
 
+}
 button[fab].fab-map {
-  top: calc(100% - 35px);
+  // top: calc(100% - 35px);
+  position: absolute;
+  right: 35px;
+    top: 35px;
   z-index: 50;
 }
 
@@ -18,4 +31,24 @@ ion-content.cards-bg {
 }
 .sebm-google-map-container {
   height: 300px;
+}
+
+$text-image-size: 4.5rem !default;
+
+text-img {
+    background-color: red;
+    color: white;
+}
+text-img, text-img::after {
+    width: $text-image-size;
+    height: $text-image-size;
+    border-radius: $text-image-size / 2;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    font-size: font-size(xxx-large);
+}
+
+text-img::after {
+    content: attr(value);
 }
