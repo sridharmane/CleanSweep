@@ -26,16 +26,16 @@
 </ion-card>
 <ion-card>
   <ion-list>
-    <ion-item>
+    <ion-item *ngFor="let sa of streetAddresses">
       <ion-avatar item-left>
-        23
+        {{sa.houseNumber}}
       </ion-avatar>
       <!-- <h2>Merrimac Street</h2> -->
-      <p>Merrimac Street</p>
-      <!-- <p>November 5, 1955</p> -->
-      <button light>Light</button>
-      <button>Primary</button>
-      <button secondary>Secondary</button>
+      <p>{{sa.address}}</p>
+      <p *ngIf="sa.lat">{{sa.lat}},{{sa.lng}}</p>
+      <button light (click)="getGeocodeUrl(sa.address)">Url</button>
+      <button (click)="getMapData(mapData)">MapData</button>
+      <button secondary (click)="extractComponents(mapData.address_components,requiredComponents)">Secondary</button>
     </ion-item>
   </ion-list>
   </ion-card>
